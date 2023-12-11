@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-//import {useHistory} from 'react-router-dom';
 
 function SearchHobby({ onSearch }) {
     const [searchTerm, setSearchTerm] = useState('');
-    //const history = useHistory();
 
     const handleSearch = (e) => {
         e.preventDefault();
