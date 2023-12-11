@@ -9,8 +9,8 @@
 .findHobby {
   background-color: darkslategray;
   color: rgb(255, 255, 255);
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
 }
 
 .cardStyle1 {
@@ -22,8 +22,10 @@
 
 .hobbiesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjust as needed */
-  grid-gap: 20px; /* Adjust as needed */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust as needed */
+  grid-gap: 10px; /* Adjust as needed */
+  /* adjust grid row gap */
+  grid-row-gap: 0.5px; 
 }
 
 .imageStyle {
@@ -34,8 +36,8 @@
 }
 
 .videoStyle {
-  width: 450px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   border: 1px solid #ddd;
   padding: 10px;
 }

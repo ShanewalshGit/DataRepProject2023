@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const port = 4000
-const path = require('path');
 const cors = require('cors');
 
 // Avoid a CORS error occuring
@@ -52,7 +51,12 @@ app.put('/api/hobby/:id', async(req,res)=>{
     res.send(hobby);
 })
 
-
+// Delete hobby data based on id
+app.delete('/api/hobby/:id', async(req,res)=>{
+    console.log("Delete: "+req.params.id);
+    let hobby = await hobbyModel.findByIdAndDelete(req.params.id);
+    res.send(hobby);
+})
 
 // returns welcome message to the base url for our server
 app.get('/', (req, res) => {

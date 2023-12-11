@@ -40,6 +40,8 @@ function AddHobby(){
                 <div className="form-group"> {/* add a hobby name to the api*/}
                     <label>Add Hobby Name: </label>
                     <input type="text"
+                    placeholder="Enter Hobby Name"
+                    align="center"
                     className="form-control"
                     value={hobbyName}
                     onChange={(e) => { setName(e.target.value) }}
@@ -48,6 +50,8 @@ function AddHobby(){
                 <div className="form-group"> {/* add a description for hobby to the api*/}
                     <label>Add description: </label>
                     <input type="text"
+                    placeholder="Enter Hobby Description"
+                    align="center"
                     className="form-control"
                     value={description}
                     onChange={(e) => { setDesc(e.target.value) }}
@@ -56,6 +60,8 @@ function AddHobby(){
                 <div className="form-group"> {/* add a hobby picture to the api*/}
                     <label>Add Url for Hobby picture: </label>
                     <input type="text"
+                    placeholder="Enter Hobby Picture Url"
+                    align="center"
                     className="form-control"
                     value={picture}
                     onChange={(e) => { setPicture(e.target.value) }}
@@ -64,6 +70,8 @@ function AddHobby(){
                 <div className="form-group"> {/* add a difficulty tier to the api*/}
                     <label>Add difficulty for the hobby (Beginner, Intermediate, Advanced, Expert): </label>
                     <input type="text"
+                    placeholder="Enter Hobby Difficulty"
+                    align="center"
                     className="form-control"
                     value={difficulty}
                     onChange={(e) => { setDifficulty(e.target.value) }}
@@ -72,6 +80,8 @@ function AddHobby(){
                 <div className="form-group"> {/* add a hobby video to the api*/}
                     <label>Add url for video on hobby (Tutorial or showcase): </label>
                     <input type="text"
+                    placeholder="Enter Hobby Video Url"
+                    align="center"
                     className="form-control"
                     value={videoUrl}
                     onChange={(e) => { setVideo(e.target.value) }}
@@ -79,7 +89,7 @@ function AddHobby(){
                 </div>
                 <div>
                     {/* submission space for our new hobby*/}
-                    <input type="submit" value="Add Hobby"></input>
+                    <input type="submit" align="center" value="Add Hobby"></input>
                 </div>
             </form>
         </div>

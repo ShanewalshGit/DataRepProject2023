@@ -20,7 +20,7 @@ function App() {
       {/* Navbar component imported from Bootstrap*/}
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="/">UNeedAHobby</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="findHobby">Find Hobby</Nav.Link>

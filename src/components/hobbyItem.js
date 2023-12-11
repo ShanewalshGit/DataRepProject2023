@@ -1,10 +1,11 @@
 import { Card, CardBody, CardHeader, CardText } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import Button from "react-bootstrap/Button";
+import axios from "axios";
 
 
 function HobbyItem(props){
     try {
-        const videoId = new URLSearchParams(new URL(props.myHobby.videoUrl).search).get('v');
         const altId = props.myHobby.videoUrl.split("/").pop();
         return (
             /*
@@ -37,6 +38,16 @@ function HobbyItem(props){
                             </blockquote>
                         </CardBody>
                         <Link to={"/editHobby/"+props.myHobby._id} className="btn btn-secondary">Edit</Link>
+                        <Button variant="danger" onClick={
+                            (e)=>{
+                                axios.delete("http://localhost:4000/api/hobby/"+props.myHobby._id)
+                                .then((res)=>{
+                                    // call parent function to refrest data
+                                    let Reload = props.reload();
+                                })
+                                .catch();
+                            }
+                        }>Delete</Button>
                     </Card>
                 </div>
         );
