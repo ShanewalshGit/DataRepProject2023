@@ -11,8 +11,6 @@ import AddHobby from './components/addHobby';
 import Content from './components/content';
 import EditHobby from './components/editHobby';
 
-
-
 function App() {
   return (
     <BrowserRouter>
