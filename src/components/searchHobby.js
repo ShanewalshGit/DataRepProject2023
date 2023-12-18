@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+// Search Hobby component for filtering data based on hobby name
 function SearchHobby({ onSearch }) {
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -9,6 +10,7 @@ function SearchHobby({ onSearch }) {
     };
 
     return (
+        // Form for searching hobbies, used in findHobby.js
         <form onSubmit={handleSearch} className="form-inline my-2 my-lg-0">
             <input 
             className='form-control mr-sm-2'

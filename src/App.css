@@ -1,3 +1,5 @@
+
+/* Base application styling */
 .App {
   text-align: center;
   background-color: darkslategray;
@@ -6,6 +8,7 @@
   margin: 5px;
 }
 
+/* Carousel styling */
 .carousel-item {
   height: 500px;
   min-height: 350px;
@@ -30,6 +33,24 @@
   object-fit: cover;
 }
 
+/* lists in homepage styling */
+.list1 {
+  padding: 5px;
+  margin: 5px;
+  list-style-position: inside;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.list2 {
+  padding: 5px;
+  margin: 5px;
+  list-style-position: inside;
+  padding-left: 20px;
+  text-align: center;
+}
+
+/* Find hobby page styling */
 .findHobby {
   background-color: darkslategray;
   color: rgb(255, 255, 255);
@@ -37,6 +58,7 @@
   margin: 5px;
 }
 
+/* cards in find hobby page styling */
 .cardStyle1 {
   background-color: darkslategray;
   color: white;
@@ -44,6 +66,7 @@
   margin: 2px;
 }
 
+/* grid used in find hobby page styling */
 .hobbiesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust as needed */
@@ -52,6 +75,7 @@
   grid-row-gap: 0.5px; 
 }
 
+/* image and video styling */
 .imageStyle {
   width: 100%;
   height: auto;
@@ -66,6 +90,7 @@
   padding: 10px;
 }
 
+/* footer styling */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -106,6 +131,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* navbar styling */
 .navbar a {
   color: #f2f2f2;
 }

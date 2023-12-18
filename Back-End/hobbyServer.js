@@ -6,7 +6,7 @@ const cors = require('cors');
 // Avoid a CORS error occuring
 app.use(cors());
 
-app.use(function(req, res, next) {
+app.use(function(req, res, next) { //allow cross origin requests
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers",
@@ -28,8 +28,6 @@ main().catch(err => console.log(err));
 
 async function main() {
   await mongoose.connect('mongodb+srv://hobbyadmin:hobbyadmin@shanescluster.bayvtko.mongodb.net/?retryWrites=true&w=majority');
-
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 // Establish Schema
@@ -60,13 +58,7 @@ app.delete('/api/hobby/:id', async(req,res)=>{
 
 // returns welcome message to the base url for our server
 app.get('/', (req, res) => {
-  res.send('Welcome to Data Representation & Querying')
-})
-
-// returns "Hello " with the selected name you've slotted into the url
-app.get('/hello/:name', (req,res) =>{
-    console.log(req.params.name);
-    res.send("Hello "+ req.params.name);
+  res.send('Welcome to my Hobby app!')
 })
 
 // returns hobby json data
@@ -79,7 +71,7 @@ app.get('/api/hobbies', async (req,res) =>{
 app.get('/api/hobby/:id', async (req,res)=>{
     console.log(req.params.id);
 
-    let hobby = await hobbyModel.findById({_id:req.params.id});
+    let hobby = await hobbyModel.findById({_id:req.params.id}); // find hobby based on id
     res.send(hobby);
 })
 
@@ -97,7 +89,7 @@ app.get('/name', (req,res) => {
 app.post('/api/hobbies', (req,res) =>{
     console.log(req.body);
     try {
-    hobbyModel.create({
+    hobbyModel.create({ // create hobby model with the following data
         hobbyName:req.body.hobbyName,
         picture:req.body.picture,
         description:req.body.description,

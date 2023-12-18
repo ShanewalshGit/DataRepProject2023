@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // For navigation to findHobby.js
 
 function AddHobby(){
 
@@ -31,7 +31,7 @@ function AddHobby(){
         // send inputted hobby data to server.js in BackEnd
         axios.post("http://localhost:4000/api/hobbies",hobby)
         .then((res) => {
-            navigate('/findHobby');
+            navigate('/findHobby'); // navigate to findHobby.js
         })
         .catch();
 

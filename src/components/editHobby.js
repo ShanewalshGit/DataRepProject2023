@@ -3,14 +3,11 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { set } from 'mongoose';
 export default function EditHobby(props) {
-    // The useParams hook returns an object of key/value pairs of
-    // the dynamic params from the current URL that were matched by
-    //the <Route path>.
+
+    // get the id from the url using the useParams() hook
     let { id } = useParams();
     // update arrays using the React useState()
-    // and without the Array objects push() method
     const [hobbyName, setName] = useState("");
     const [description, setDesc] = useState("");
     const [picture, setPicture] = useState("");
@@ -19,11 +16,9 @@ export default function EditHobby(props) {
 
     // useNavigate return a function that we can use to navigate
     const navigate = useNavigate();
-    //useEffect Hook is similar componentDidMount
-    useEffect(() => {
-        //axios is a promised based web client
-        //make a HTTP Request with GET method and pass as part of the
-        //url.
+
+        //make a HTTP Request with GET method and pass as part of the URL the id of the hobby
+        useEffect(() => {
         axios.get('http://localhost:4000/api/hobby/' + id)
             .then((response) => {
                 setName(response.data.hobbyName);
@@ -37,6 +32,7 @@ export default function EditHobby(props) {
             })
     }, []);
 
+    // handle submit function for editing hobby data
     const handleSubmit = (event) => {
         event.preventDefault();
         const newHobby = {
@@ -51,11 +47,12 @@ export default function EditHobby(props) {
         axios.put('http://localhost:4000/api/hobby/' + id, newHobby)
             .then((res) => {
                 console.log(res.data);
-                navigate('/findHobby');
+                navigate('/findHobby'); // navigate to findHobby.js
             });
     }
     return ( 
         <div>
+            {/* Form for editing hobby data */}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Edit Hobby Name: </label>
