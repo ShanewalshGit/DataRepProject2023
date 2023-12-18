@@ -1,7 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddHobby(){
+
+    // useNavigate return a function that we can use to navigate
+    const navigate = useNavigate();
 
     // vars using useState for each input
     const [hobbyName, setName] = useState("");
@@ -26,7 +30,9 @@ function AddHobby(){
         });
         // send inputted hobby data to server.js in BackEnd
         axios.post("http://localhost:4000/api/hobbies",hobby)
-        .then()
+        .then((res) => {
+            navigate('/findHobby');
+        })
         .catch();
 
     }

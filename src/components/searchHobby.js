@@ -17,7 +17,7 @@ function SearchHobby({ onSearch }) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button className='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>
+            <button className='btn btn-outline-success my-2 my-sm-2' type='submit'>Search</button>
         </form>
     );
 }

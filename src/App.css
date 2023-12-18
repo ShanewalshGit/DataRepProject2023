@@ -2,8 +2,32 @@
   text-align: center;
   background-color: darkslategray;
   color: rgb(255, 255, 255);
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.carousel-item {
+  height: 500px;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  background-size: cover;
+}
+
+.carousel-caption {
+  bottom: 50px;
+  text-align: center;
+}
+
+.carousel-caption h5 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.carousel-item img {
+  height: 75%;
+  object-fit: cover;
 }
 
 .findHobby {
