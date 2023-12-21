@@ -27,9 +27,11 @@ function HobbyItem(props){
                             allowFullScreen className="videoStyle">
                             </iframe>
                                 <br></br>
-                                <CardText><b>About: </b>{props.myHobby.description}</CardText>
+                                <h4>About</h4>
+                                <CardText>{props.myHobby.description}</CardText>
                                 <footer>
-                                    <h4><b>Difficulty: </b>{props.myHobby.difficulty}</h4>
+                                    <h4>Difficulty</h4>
+                                    <b>{props.myHobby.difficulty}</b>
                                 </footer>
 
                             </blockquote>

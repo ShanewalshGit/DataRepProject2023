@@ -61,9 +61,10 @@
 /* cards in find hobby page styling */
 .cardStyle1 {
   background-color: darkslategray;
-  color: white;
   padding: 2px;
   margin: 2px;
+  text-align: center;
+  color: white;
 }
 
 /* grid used in find hobby page styling */

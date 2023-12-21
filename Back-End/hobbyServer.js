@@ -26,6 +26,7 @@ const { request } = require('http');
 
 main().catch(err => console.log(err));
 
+// Connect to MongoDB database
 async function main() {
   await mongoose.connect('mongodb+srv://hobbyadmin:hobbyadmin@shanescluster.bayvtko.mongodb.net/?retryWrites=true&w=majority');
 }
@@ -63,8 +64,19 @@ app.get('/', (req, res) => {
 
 // returns hobby json data
 app.get('/api/hobbies', async (req,res) =>{
+    let query = {}; // empty query
+
+    if (req.query.difficulty){ // if difficulty is in the query
+        query.difficulty = req.query.difficulty; // set query difficulty to the difficulty in the query
+    }
+
     let hobbies = await hobbyModel.find({});
     res.json(hobbies);
+})
+
+app.get(('api/hobbies/count'), async (req,res) =>{
+    let count = await hobbyModel.countDocuments({});
+    res.json({ count });
 })
 
 // returns hobbydata from hobbyModel based on id
